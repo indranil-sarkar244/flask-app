@@ -1,0 +1,93 @@
+{% extends 'base.html' %}
+{% block title %}
+Home
+{% endblock title %}
+
+{% block body %}
+
+
+<div class="container-fluid">
+    <a class="navbar-brand" href="/">Myto Do</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/">Home</a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="/about">About</a>
+            </li>
+        </ul>
+        <form class="d-flex" role="search" method="GET" action="/">
+            <input class="form-control me-2" type="search" name="query"  placeholder="Search" aria-label="Search">
+            <button class="btn btn-dark" type="submit">Search</button>
+        </form>
+    </div>
+</div>
+</nav>
+<div class="container my-8">
+    <h1>Add a to Do </h1>
+    <form action="/" , method="POST">
+        <div class="mb-3">
+            <label for="Tittle" class="form-label">To Do Tittle</label>
+            <input type="text" , name="title" class="form-control" id="Tittle" aria-describedby="emailHelp">
+            <div id="emailHelp" class="form-text"></div>
+        </div>
+        <div class="mb-3">
+            <label for="desc" class="form-label">To Do Description </label>
+            <input type="text" , name="desc" class="form-control" id="desc">
+        </div>
+        <button type="submit" class="btn btn-success">Submit</button>
+    </form>
+</div>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+<div class="container my-5">
+    <h2> Your To Dos </h2>
+    <table class="table">
+        {% if allTodo|length==0 %}
+        <div class="alert alert-dark" role="alert">
+            No Todos found. Add your first Todo now!
+        </div>
+
+        {% else %}
+        <thead>
+            <tr>
+                <th scope="col">Sno</th>
+                <th scope="col">Tittle</th>
+                <th scope="col">Description</th>
+                <th scope="col">Time</th>
+                <th scope="col">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for todo in allTodo %} <!--it is a jinja framework for loop-->>
+            <tr>
+                <th scope="row">{{loop.index}}</th>
+                <td>{{todo.Title}}</td>
+                <td>{{todo.Desc}}</td>
+                <td>{{todo.Date_created}}</td>
+                <td><a href="/update/{{todo.Sno}}" type="button"
+                        class="btn btn-outline-danger btn-sm-mx-1">Update</button></td>
+                <td><a href="/delete/{{todo.Sno}}" type="button"
+                        class="btn btn-outline-danger btn-sm-mx-1">Delete</button></td>
+                {% endfor %}
+            </tr>
+        </tbody>
+    </table>
+    {% endif %}
+
+</div>
+
+<div style="text-align: center;">
+    <form action="/delete_all" , method="post">
+        <button type="submit" class="btn btn-danger">Delete All Todos </button>
+    </form>
+</div>
+
+{% endblock body %}

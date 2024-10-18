@@ -1,0 +1,38 @@
+CREATE AND ACTIVATE VIRTUAL ENVIOURNMENT :
+
+create and open folder in vs code 
+to create virtual enviournment run "pip install virtualenv" this command in terminal 
+then run "virtualenv env" and done you have succesfully created your  virtual enviourment named env in your particular folder
+now  question is why should we create virtual enviourment 
+
+suppose you have installed the main python system in your computer now whatever you will do with your python scripts 
+you don't want to affect the main system or main virtual enviourment let's suppose you want to install a package of 1.1 
+version for this course and 1.8 version for another coursre but at a time only one version can be installed in your system  so 
+you have created here a copy or instance  of main virtual enviourment so 1.1 version will not install in your main system 
+instead it will be installed in your copied virtual enviourment  then you can also install the 1.8 version later in your main system
+ or any other copied virtual enviourment 
+
+
+ Now to execute your scripts in  virtual enviourment run " Set-ExecutionPolicy unrestricted " this command in your terminal 
+ if it throws error then open terminal as administrator run "Set-ExecutionPolicy unrestricted " this command again and then click for yes 
+
+ and done now you can run any scripts in your virtual enviourment
+
+ now its time to activate your virtual enviourment for this 
+run ".\env\Scripts\activate.ps1" this command in your terminal and done you have succesfully activated your virtual enviournment 
+
+
+INSTALL FLASK :
+
+Now to install flask run "pip install flask" in your terminal and done you have installed flask  
+
+
+INSTALL SQLALCHEMY :
+
+run "pip install flask-sqlalchemy" this command in your terminal 
+
+CREATE DATABASE :
+
+first write  "python" and enter in terminal then  " from app import db " this command in your terminal then press enter 
+then write " db.create_all() " this command and press enter and done you will see a database file has been created 
+in your directory
