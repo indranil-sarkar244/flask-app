@@ -36,3 +36,89 @@ CREATE DATABASE :
 first write  "python" and enter in terminal then  " from app import db " this command in your terminal then press enter 
 then write " db.create_all() " this command and press enter and done you will see a database file has been created 
 in your directory
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Great! Now that you're signed in to GitHub, let's push your Flask project to a GitHub repository so you can deploy it on Render.
+
+Step 1: Create a New GitHub Repository
+Go to GitHub and log in if you aren't already.
+Click the "+" icon in the top right corner, then select "New repository".
+Name your repository (e.g., "flask-app").
+Leave it as Public and don’t check any boxes (like README or .gitignore).
+Click Create repository.
+Step 2: Set Up Git Locally
+Now that you've created a repository, let's link it to your local project and push your files.
+
+Open Git Bash (or use the terminal in VS Code).
+
+Navigate to your Flask project directory (replace the path with your project location):
+
+bash
+Copy code
+cd C:/Users/hp/Desktop/Flask
+Initialize Git if you haven’t done it yet:
+
+bash
+Copy code
+git init
+Add your project files to Git:
+
+bash
+Copy code
+git add .
+Commit your changes:
+
+bash
+Copy code
+git commit -m "Initial commit"
+Link your GitHub repository to your local project:
+
+bash
+Copy code
+git remote add origin https://github.com/your-username/flask-app.git
+Replace your-username with your GitHub username and flask-app with your repository name.
+
+Push your project to GitHub:
+
+bash
+Copy code
+git push -u origin master
+Step 3: Deploy to Render
+Now that your project is on GitHub, follow these steps to deploy it to Render:
+
+Go to Render and log in.
+Click "New Web Service".
+Connect your GitHub account if prompted and select the repository you just pushed.
+Follow the steps for deployment, including setting the start command to gunicorn app:app.
+Click Create Web Service.
+Render will now build and deploy your app. Once it’s done, you’ll get a URL where your Flask app will be live.
+
+Let me know if you need help with any of these steps!
+
+
+
+
+
+
