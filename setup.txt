@@ -84,5 +84,5 @@ Push your project to GitHub:
 
 bash
 Copy code
-git push -u origin master
+git push -u origin main
 Step 3: Deploy to Render
