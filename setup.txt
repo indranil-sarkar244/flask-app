@@ -40,26 +40,6 @@ in your directory
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 Great! Now that you're signed in to GitHub, let's push your Flask project to a GitHub repository so you can deploy it on Render.
 
 Step 1: Create a New GitHub Repository
@@ -106,19 +86,3 @@ bash
 Copy code
 git push -u origin master
 Step 3: Deploy to Render
-Now that your project is on GitHub, follow these steps to deploy it to Render:
-
-Go to Render and log in.
-Click "New Web Service".
-Connect your GitHub account if prompted and select the repository you just pushed.
-Follow the steps for deployment, including setting the start command to gunicorn app:app.
-Click Create Web Service.
-Render will now build and deploy your app. Once it’s done, you’ll get a URL where your Flask app will be live.
-
-Let me know if you need help with any of these steps!
-
-
-
-
-
-
